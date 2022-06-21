@@ -49,7 +49,7 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
-/*сетка на флексах*/
+/*сітка на флексах*/
 .card-set {
     display: flex;
     flex-wrap: wrap;
@@ -102,14 +102,18 @@ display: flex;
 }
 
 .header-link {
+    position: relative;
+    display: block;
+    
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--text-color);
-    display: block;
+    
     padding-top: 32px;
     padding-bottom: 32px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .current {
     color: var(--link-text-color);
@@ -118,17 +122,17 @@ display: flex;
 .header-contact-item:not(:last-child) {
     margin-right: 50px;
 }
-.header-list .header-link.current::after {
+.header-link.current::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
 
     display: block;
     width: 100%;
     height: 4px;
     background-color: #2196F3;
-    border-radius: 2px;
+    border-radius: 2px; 
 }
 .contact-link {
     font-weight: 500;
@@ -140,6 +144,7 @@ display: flex;
     padding-bottom: 32px;
     display: flex;
     align-items: center;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-mail,
 .icon-tel {
@@ -149,6 +154,7 @@ display: flex;
 .header-link:hover,
 .contact-link:hover {
     color: var(--link-text-color);
+   
 }
 .header-link:focus,
 .contact-link:focus {
@@ -197,6 +203,7 @@ display: flex;
     border-radius: 4px;
     border: none;
     cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }    
 .btn:hover {
@@ -268,7 +275,29 @@ display: flex;
     letter-spacing: 0.03em;
     color: var(--text-color);
 }
-
+.label {
+    position: relative;
+}
+.label-title-text{
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    bottom: 0;
+    background-color: rgba(47, 48, 58, 0.8);
+}
+.label-text {     
+    padding-top: 27px;
+    padding-bottom: 27px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    
+}
 /*Наша команда*/
 .main-team {
     background-color: #F5F4FA;
@@ -289,9 +318,9 @@ display: flex;
 }
 .team-item {
     width: calc((100% - 90px) / 4);
-    
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
+    overflow: hidden;
 }
 .team-wrapper {
     padding: 30px 10px;
@@ -335,7 +364,7 @@ display: flex;
     background-color: #FFFFFF;
     border-radius: 50%;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-            color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-link:hover {
     background-color: var(--link-text-color);
@@ -419,7 +448,8 @@ display: flex;
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
-    color: rgba(255, 255, 255, 0.6);    
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-link:hover {
     color: var(--link-text-color);
@@ -463,7 +493,7 @@ display: flex;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link:hover {
     background-color: var(--link-text-color);
@@ -496,6 +526,8 @@ display: flex;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
  .filter-btn:hover, 
  .filter-btn:focus {
@@ -534,4 +566,88 @@ display: flex;
     line-height: 1.88;
     letter-spacing: 0.03em;
     color: var(--secondry-text-color)
+ }
+.project-link {
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+ .project-link:hover,
+ .project-link:focus {
+   box-shadow:  0px 1px 1px rgba(0, 0, 0, 0.12),
+        0px 4px 4px rgba(0, 0, 0, 0.06),
+        1px 4px 6px rgba(0, 0, 0, 0.16);
+ }
+.project-group {
+    position: relative;
+    overflow: hidden;
+
+}
+ .project-owerlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 63px 24px;
+    width: 100%;
+    height: 100%;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    background-color: rgba(33, 150, 243, 0.9);
+    
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ 
+ }
+ .project-link:hover .project-owerlay,
+ .project-link:focus .project-owerlay {
+    transform: translateY(0);
+    
+ }
+ /*Modal window*/
+ .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    opacity: 1;
+
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+ }
+ .backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+ }
+ .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 528px;
+    height: 581px;   
+    background-color: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+ }
+ .modal-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
  }
